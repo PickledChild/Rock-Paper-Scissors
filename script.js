@@ -23,7 +23,8 @@ function playRound(choice, compChoice) {
     return "I chose Rock! You Lose!";
   } else if (choice === "scissors" && compChoice === "paper") {
     return "I chose Paper! You Win!";
-  }
+  } else choice == undefined;
+  return "Invalid entry. Try again!";
 }
 
 const choice = prompt("Rock, Paper, or Scissors?").toLowerCase().trim();
