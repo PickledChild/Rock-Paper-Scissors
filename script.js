@@ -8,10 +8,27 @@
 
 // output win or lose
 
-let input = "";
-
 const rock = "Rock";
 const paper = "Paper";
 const scissors = "Scissors";
 
-let compChoice = [rock, paper, scissors][Math.floor(Math.random() * 3)];
+function gameRun(choice) {
+  let compChoice = [rock, paper, scissors][Math.floor(Math.random() * 3)];
+  if (choice === compChoice) {
+    console.log("Tie!");
+  } else if (choice === rock && compChoice === paper) {
+    console.log("You Lose!");
+  } else if (choice === rock && compChoice === scissors) {
+    console.log("You Win!");
+  } else if (choice === paper && compChoice === rock) {
+    console.log("You Win!");
+  } else if (choice === paper && compChoice === scissors) {
+    console.log("You Lose!");
+  } else if (choice === scissors && compChoice === rock) {
+    console.log("You Lose!");
+  } else if (choice === scissors && compChoice === paper) {
+    console.log("You Win!");
+  }
+}
+
+console.log(gameRun(paper));
