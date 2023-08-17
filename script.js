@@ -1,12 +1,5 @@
-const printAction = document.getElementById("results");
-const printPlayerScore = document.getElementById("playerScore");
-const printCompScore = document.getElementById("compScore");
-
 let playerScore = 0;
 let compScore = 0;
-
-printPlayerScore.textContent = `Your Score: ${playerScore}`;
-printCompScore.textContent = `My Score: ${compScore}`;
 
 // mechanics of game
 // function playRound(choice, compChoice) {
@@ -38,10 +31,12 @@ function playRound(choice, compChoice) {
         case "paper":
           printAction.textContent = "I chose Paper! You Lose!";
           compScore++;
+          document.getElementById("compScore").textContent = compScore;
           break;
         case "scissors":
           printAction.textContent = "I chose Scissors! You Win!";
           playerScore++;
+          document.getElementById("playerScore").textContent = playerScore;
           break;
       }
       break;
@@ -50,6 +45,7 @@ function playRound(choice, compChoice) {
         case "rock":
           printAction.textContent = "I chose Rock! You Win!";
           playerScore++;
+          document.getElementById("playerScore").textContent = playerScore;
           break;
         case "paper":
           printAction.textContent = "Tie!";
@@ -57,6 +53,7 @@ function playRound(choice, compChoice) {
         case "scissors":
           printAction.textContent = "I chose Scissors! You Lose!";
           compScore++;
+          document.getElementById("compScore").textContent = compScore;
           break;
       }
       break;
@@ -65,10 +62,12 @@ function playRound(choice, compChoice) {
         case "rock":
           printAction.textContent = "I chose Rock! You Lose!";
           compScore++;
+          document.getElementById("compScore").textContent = compScore;
           break;
         case "paper":
           printAction.textContent = "I chose Paper! You Win!";
           playerScore++;
+          document.getElementById("playerScore").textContent = playerScore;
           break;
         case "scissors":
           printAction.textContent = "Tie!";
@@ -76,7 +75,13 @@ function playRound(choice, compChoice) {
       }
       break;
   }
+  console.log(`player score: ${playerScore}`);
+  console.log(`comp score: ${compScore}`);
 }
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
 // defines computers choice
 function compInput() {
@@ -103,3 +108,5 @@ scissors.addEventListener("click", () => {
   const compChoice = compInput();
   return playRound(playerChoice, compChoice);
 });
+
+const printAction = document.getElementById("results");
