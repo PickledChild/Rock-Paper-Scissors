@@ -24,6 +24,24 @@ function compInput() {
   return compChoice;
 }
 
-const rock = document.getElementById("#rock");
-const paper = document.getElementById("#paper");
-const scissors = document.getElementById("#scissors");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener("click", () => {
+  const playerChoice = "rock";
+  const compChoice = compInput();
+  playRound(playerChoice, compChoice);
+});
+
+paper.addEventListener("click", () => {
+  const playerChoice = "paper";
+  const compChoice = compInput();
+  playRound(playerChoice, compChoice);
+});
+
+scissors.addEventListener("click", () => {
+  const playerChoice = "scissors";
+  const compChoice = compInput();
+  playRound(playerChoice, compChoice);
+});
