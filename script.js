@@ -1,13 +1,3 @@
-// input for rock paper or scissors
-
-// line for console to pick randomly between rock
-// paper or scissors
-
-// line to compare input to random choice and see which one
-// wins
-
-// output win or lose
-
 function playRound(choice, compChoice) {
   if (choice === compChoice) {
     return "Tie!";
@@ -27,8 +17,13 @@ function playRound(choice, compChoice) {
   return "Invalid entry. Try again!";
 }
 
-const choice = prompt("Rock, Paper, or Scissors?").toLowerCase().trim();
+function compInput() {
+  const compChoice = ["rock", "paper", "scissors"][
+    Math.floor(Math.random() * 3)
+  ];
+  return compChoice;
+}
 
-const compChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
-
-console.log(playRound(choice, compChoice));
+const rock = document.getElementById("#rock");
+const paper = document.getElementById("#paper");
+const scissors = document.getElementById("#scissors");
