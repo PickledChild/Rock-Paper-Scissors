@@ -1,22 +1,24 @@
+// mechanics of game
 function playRound(choice, compChoice) {
   if (choice === compChoice) {
-    return "Tie!";
+    return (printAction.textContent = "Tie!");
   } else if (choice === "rock" && compChoice === "paper") {
-    return "I chose Paper! You Lose!";
+    return (printAction.textContent = "I chose Paper! You Lose!");
   } else if (choice === "rock" && compChoice === "scissors") {
-    return "I chose Scissors! You Win!";
+    return (printAction.textContent = "I chose Scissors! You Win!");
   } else if (choice === "paper" && compChoice === "rock") {
-    return "I chose Rock! You Win!";
+    return (printAction.textContent = "I chose Rock! You Win!");
   } else if (choice === "paper" && compChoice === "scissors") {
-    return "I chose Scissors! You Lose!";
+    return (printAction.textContent = "I chose Scissors! You Lose!");
   } else if (choice === "scissors" && compChoice === "rock") {
-    return "I chose Rock! You Lose!";
+    return (printAction.textContent = "I chose Rock! You Lose!");
   } else if (choice === "scissors" && compChoice === "paper") {
-    return "I chose Paper! You Win!";
+    return (printAction.textContent = "I chose Paper! You Win!");
   } else choice == undefined;
-  return "Invalid entry. Try again!";
+  return (printAction.textContent = "Invalid entry. Try again!");
 }
 
+// defines computers choice
 function compInput() {
   const compChoice = ["rock", "paper", "scissors"][
     Math.floor(Math.random() * 3)
@@ -45,3 +47,5 @@ scissors.addEventListener("click", () => {
   const compChoice = compInput();
   playRound(playerChoice, compChoice);
 });
+
+const printAction = document.getElementById("results");
